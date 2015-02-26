@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Smart Queue</title>
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <link href="../public/css/jquery.mobile-1.4.2.min.css" rel="stylesheet">
+	<link href="../public/css/jqm-datebox-1.4.2.css" rel="stylesheet">
+	<link href="../public/css/jqm-datebox-propio.css" rel="stylesheet">
+    <script src="../public/js/jquery-1.10.2.js"></script>
+    <script src="../public/js/controlador/SmartQ.js"></script>
+    <script src="../public/js/jquery.mobile-1.4.2.min.js"></script>
+	<script src="../public/js/jquery.datepic.js"></script>
+    <script src="../public/js/configuracion/Constantes.js"></script>
+    <!-- JWEBSOCKET JAVASCRIPT CLIENT LIBRARIES -->
+    <script type="text/javascript" src="../public/js/jWebSocket.js"></script>
+
+    <!-- THE PLUGIN DEPENDENCIES -->
+    <script type="text/javascript" src="../public/js/jWebSocketJQueryPlugIn.js"></script>
+</head>
+<body>
+ <!-- PAGINA UNO -->
+    <div data-role="page" data-theme="b" id="pagina1">
+        <div data-role="content">
+            <div class="logo"><img src="../public/images/logo.png"></div>
+            <div style="text-align: center">
+                <div class="ui-grid-b">
+                    <div class="ui-block-b">
+                        <div class="logo">
+                            <div class="round_img">
+                                <a href="fila.html">
+                                    <img src="../public/images/alert-black.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="page_title">
+                            Fila
+                        </div>
+                    </div>
+
+                    <div class="ui-block-c">
+                        <div class="logo">
+                            <div class="round_img">
+                                <a data-inline="true" data-rel="dialog" href=
+                                "#pagevideo"><img src="../public/images/tools.png"></a>
+                            </div>
+                        </div>
+
+                        <div class="page_title">
+                            Ayuda
+                        </div>
+                    </div>
+
+                    <div class="ui-block-c">
+                        <div class="logo">
+                            <div class="round_img">
+                                <a data-inline="true" href="sistema.html"><img src=
+                                "../public/images/taza.png"></a>
+                            </div>
+                        </div>
+
+                        <div class="page_title">
+                            Disfruta <br/>tu tiempo
+                        </div>
+                    </div>
+
+                    <p class="bottom">Smart Queue - APP 2014</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- fin pagina 1 -->
+	<!-- DIALOGOS   -->
+  <!-- PAGINA TRES PAGE AHORA -->
+   <div data-role="page" data-theme="b" id="pageahora">
+        <div data-role="header">
+            <h1>Pide tu n&uacute;mero</h1>
+        </div>
+        <div data-role="content">
+            <div style="text-align: center">
+                <div class="ui-grid-c">
+                     <div class="round_img2">
+						 <a data-rel="dialog" href="#pageahora" class="linkbloque"><img src=
+                            "../public/images/qr.png">
+						</a>
+						<div class="subtitulo">Ingresa QR</div>
+                     </div>
+                 </div>
+
+                <div class="ui-grid-c">
+                        <div class="round_img2">
+						<div class="subtitulo margint15">Ingresa C&oacute;digo</div>
+						<div data-role="main" class="field-content noventa">
+                         <form method="post" action="sistema.html">
+							  <input type="text" name="codigoingreso" id="codigoingreso" class="ingreso">
+							  <input type="submit" value="Solicitar">
+   						 </form>
+						</div>
+                    </div>
+                </div>
+            </div>
+					   <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed" style="position:fixed;">
+            <div data-grid="d" data-role="navbar">
+                <ul>
+                    <li>
+                        <a class="ui-btn-active" data-icon="arrow-l" href=
+                        "#" data-rel="back">Back</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="star" href="favoritos.html">Favoritos</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="home" href="index.html" rel="external">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="grid" href="#">historial</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="search" data-rel="dialog" href="buscar.html">buscar</a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- Fin Footer -->
+        </div>
+
+  </div><!-- fin pagina 3 page ahora -->
+
+	 <!-- PAGINA CUATRO PAGE VIDEO -->
+    <div data-role="page" data-theme="b" id="pagevideo">
+        <div data-role="header">
+            <h1>Bienvenidos</h1>
+        </div>
+        <div data-role="content">
+            <div style="text-align: center">
+                <div class="ui-grid-c">
+                    <a data-rel="dialog" href="#pageahora"><iframe frameborder=
+                    "0" height="150" src=
+                    "http://www.youtube.com/embed/cA27Ft1V3TU" width=
+                    "287"></iframe></a>
+                </div>
+
+                <div class="ui-grid-c">
+                    <a data-rel="dialog" href="#fila"><iframe frameborder="0"
+                    height="150" src=
+                    "https://www.youtube.com/embed/AcCOVGT9lHk" width=
+                    "287"></iframe></a>
+                </div>
+            </div>
+
+           <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed" style="position:fixed;">
+            <div data-grid="d" data-role="navbar">
+                <ul>
+                    <li>
+                        <a class="ui-btn-active" data-icon="arrow-l" href=
+                        "#" data-rel="back">Back</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="star" href="favoritos.html">Favoritos</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="home" href="index.html" rel="external">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="grid" href="#">historial</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="search" data-rel="dialog" href="buscar.html">buscar</a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- Fin Footer -->
+        </div>
+
+    </div>  <!-- fin pagina 4 page Video -->
+
+
+      <!-- FIN DIALOGOS -->
+</body>
+</html>

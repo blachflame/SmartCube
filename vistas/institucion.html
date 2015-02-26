@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Smart Queue</title>
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <link rel="import" href="/vistas/comun/cabecera.html">
+</head>
+
+<body>
+<!-- PAGINA Seleccionar Institucion -->
+
+<div data-role="page" data-theme="b" id="selecinstitucion">
+    <div data-role="header">
+
+        <link href="../public/css/jquery.mobile-1.4.2.min.css" rel="stylesheet">
+        <link href="../public/css/jqm-datebox-1.4.2.css" rel="stylesheet">
+        <link href="../public/css/jqm-datebox-propio.css" rel="stylesheet">
+        <script src="../public/js/jquery-1.10.2.js"></script>
+
+        <script src="../public/js/jquery.mobile-1.4.2.min.js"></script>
+        <script src="../public/js/jquery.datepic.js"></script>
+        <h1>Institución</h1>
+    </div>
+
+    <div data-role="content">
+        <div style="text-align: center">
+            <br>
+            <span id="sucursal-elegida"></span>
+            <span id="tramite-elegido"> </span>
+
+            <form action="sistema.html" method="post">
+                <ul class=
+                            "ui-listview ui-listview-inset ui-corner-all ui-shadow"
+                    data-inset="true" data-role="listview" data-theme="b">
+                    <li data-role="list-divider">Seleccionar Fecha</li>
+
+                    <li><input data-options='{"mode":"flipbox"}' data-role=
+                            "datebox" type="text"></li>
+
+                </ul>
+
+                <ul class=
+                            "ui-listview ui-listview-inset ui-corner-all ui-shadow"
+                    data-inset="true" data-role="listview" data-theme="b">
+                    <li data-role="list-divider">Seleccionar Hora</li>
+
+                    <li><input data-options='{"mode":"timebox"}' data-role=
+                            "datebox" type="text"></li>
+                </ul><input type="submit" value="Siguiente">
+            </form>
+        </div>
+        <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed" style="position:fixed;">
+            <div data-grid="d" data-role="navbar">
+                <ul>
+                    <li>
+                        <a class="ui-btn-active" data-icon="arrow-l" href=
+                                "#" data-rel="back">Back</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="star" href="favoritos.html">Favoritos</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="home" href="index.html" rel="external">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="grid" href="#">historial</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="search" data-rel="dialog" href="buscar.html">buscar</a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- Fin Footer -->
+    </div>
+
+</div><!-- fin pagina seleccionar institucion -->
+</body>
+</html>

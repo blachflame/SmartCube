@@ -1,0 +1,134 @@
+<html><head>
+    <title>ws</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <script src="../public/js/jquery-1.10.2.js"></script>
+
+
+    <script type="text/javascript">var username ="Anon" ;
+    var roomName="defaultRoom";
+    var webSocket = new WebSocket('ws://192.168.120.60:9080/ObtenerInstituciones/WebSocketEndPoint');
+
+
+
+    webSocket.onerror = function(event) {
+        onError(event)
+    };
+
+    webSocket.onopen = function(event) {
+        onOpen(event);
+    };
+
+    webSocket.onmessage = function(event) {
+        onMessage(event)
+    };
+
+    function onMessage(event) {
+        alert("entro")
+        var eventData = event.data;
+
+        //If event data starts with URL
+        if(eventData.indexOf('/URL') == 0){
+            //trim the /URL command string from message
+
+            eventData = 'URL has been set to '+event.data.substr(4);
+        } else if(eventData.indexOf('/VOTEVALUE') == 0){
+            //trim the /VOTEVALUE string from the message
+            eventData = 'A vote of  '+event.data.substr(10)+'has been received';
+        } else if(eventData.indexOf('Cleared server side chat & vote history.') ==0){
+            document.getElementById('messages').innerHTML = "";
+            //reset our vote value to unset
+            lastVote=-3;
+        } else if(eventData.indexOf('/NEWVOTE') == 0){
+            //Reset our vote value to unset
+            lastVote=-3;
+            return;
+        }
+        var json = JSON.stringify(eval("(" + eventData + ")"));
+        $("#json").text(json);
+
+
+    }
+
+    function onOpen(event) {
+
+        setName();
+        setRoom();
+        getAccion();
+    }
+
+    function onError(event) {
+        alert("An error has occurred. More info:\n"+event.data);
+    }
+
+    function send() {
+        var message = document.getElementById('inputmessage').value;
+        webSocket.send(message);
+        document.getElementById('inputmessage').value = "";
+        return false;
+    }
+
+
+    function setRoom() {
+        var roomName = getRoom();
+        webSocket.send("/SETROOM"+roomName);
+        //document.getElementById('messages').innerHTML = "";
+        return false;
+    }
+
+    function getRoom(){
+        return roomName;
+    }
+
+    function setName() {
+        var myName = getName();
+        webSocket.send("/SETNAME"+myName);
+        if(myName!=''){
+            setCookie("username", myName, 365);
+        }
+        return false;
+    }
+
+    function getAccion() {
+
+        webSocket.send("/getInstituciones");
+
+        return false;
+    }
+
+    function getName(){
+        return username;
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+d.toGMTString();
+        document.cookie = cname + "=" + cvalue + "; " + expires;
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+
+
+
+
+
+
+
+    /*
+     function syncIframe(){
+     iframeUrl = document.getElementById('frame').src;
+     document.getElementById('inputURL').value = iframeUrl;
+     }*/</script>
+</head>
+<body>
+<label id="json" value=""></label>
+
+</body></html>

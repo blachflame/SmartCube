@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Smart Queue</title>
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <link href="../public/css/jquery.mobile-1.4.2.min.css" rel="stylesheet">
+    <script src="../public/js/jquery-1.10.2.js"></script>
+    <script src="../public/js/controlador/SmartQ.js"></script>
+    <script src="../public/js/jquery.mobile-1.4.2.min.js"></script>
+    <script src="../public/js/configuracion/Constantes.js"></script>
+    <link href="../public/css/jqm-datebox-1.4.2.css" rel="stylesheet">
+    <link href="../public/css/jqm-datebox-propio.css" rel="stylesheet">
+    <script src="../public/js/jquery.datepic.js"></script>
+</head>
+
+<body>
+    <!-- PAGINA DOS fila -->
+
+    <div data-role="page" data-theme="b" id="fila">
+        <div data-role="content">
+            <div style="text-align: center">
+                <header>
+                    <div class="ui-grid-c">
+                        <h1 class="page-title">Pide tu n&uacute;mero</h1>
+                    </div>
+                </header>
+
+                <div class="ui-grid-c">
+                    <div class="round_img2">
+                        <a data-rel="dialog" href="#pageahora"><img src=
+                        "../public/images/ahora.png"></a>
+
+                        <div class="page_title">
+                            Ahora
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-grid-c">
+                    <div class="round_img2">
+                        <a href="despues.html"><img src=
+                        "../public/images/despues.png"></a>
+
+                        <div class="page_title">
+                            Despu&eacute;s
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		   <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed" style="position:fixed;">
+            <div data-grid="d" data-role="navbar">
+                <ul>
+                    <li>
+                        <a class="ui-btn-active" data-icon="arrow-l" href=
+                        "#" data-rel="back">Back</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="star" href="favoritos.html">Favoritos</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="home" href="index.html" rel="external">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="grid" href="#">historial</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="search" data-rel="dialog" href="buscar.html">buscar</a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- Fin Footer -->
+</div><!-- fin pagina 2 FILA -->
+        <!-- PAGINA TRES PAGE AHORA -->
+
+        <div data-role="page" data-theme="b" id="pageahora">
+            <div data-role="header">
+                <h1>Pide tu n&uacute;mero</h1>
+            </div>
+
+            <div data-role="content">
+                <div style="text-align: center">
+                    <div class="ui-grid-c">
+                        <div class="round_img2">
+                            <a class="linkbloque ui-state-persist" data-rel="dialog" href=
+                            "#pageahora"><img src="../public/images/qr.png"></a>
+
+                            <div class="subtitulo">
+                                Ingresa QR
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-grid-c">
+                        <div class="round_img2">
+                            <div class="subtitulo margint15">
+                                Ingresa C&oacute;digo
+                            </div>
+
+                            <div class="field-content noventa" data-role=
+                            "main">
+                                <form action="sistema.html" method="post">
+                                    <input class="ingreso" id="codigoingreso"
+                                    name="codigoingreso" type="text">
+                                    <input type="submit" value="Solicitar">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+					   <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed">
+            <div data-grid="d" data-role="navbar">
+                <ul>
+                    <li>
+                        <a class="ui-btn-active" data-icon="arrow-l" href=
+                        "#" data-rel="back">Back</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="star" href="favoritos.html">Favoritos</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="home" href="index.html" rel="external">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="grid" href="#">historial</a>
+                    </li>
+
+                    <li>
+                        <a data-icon="search" data-rel="dialog" href="buscar.html">buscar</a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- Fin Footer -->
+            </div>
+		
+        </div><!-- fin pagina 3 page ahora -->
+
+</body>
+</html>
